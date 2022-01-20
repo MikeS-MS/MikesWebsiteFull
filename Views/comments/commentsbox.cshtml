@@ -1,0 +1,16 @@
+﻿@using MikeWebsite.Models
+@model List<Comment>
+
+<h1 class="post-text">Comments</h1>
+<div class="post-divider"></div>
+<div id="comments">
+
+@foreach (var Comment in Model)
+{
+    <div class="comment-container">
+        <div class="post-text comment-text">@Comment.AuthorUserName</div>
+        <div class="post-divider comment-divider"></div>
+        <div class="post-text comment-text comment-content" style="text-transform: none !important;">@Comment.Message</div>
+    </div>
+}
+</div>

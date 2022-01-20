@@ -202,6 +202,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-MikeWebsite-20220119014525.mdf" />
+    <Content Include="App_Data\aspnet-MikeWebsite-20220119014525_log.ldf">
+      <DependentUpon>aspnet-MikeWebsite-20220119014525.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\comments.css" />
     <Content Include="Content\post.css" />
     <Content Include="Content\resources\icons\comments.png" />
@@ -251,9 +255,7 @@
     <Content Include="Views\comments\anonymous.cshtml" />
     <Content Include="Views\comments\commentsbox.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

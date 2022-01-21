@@ -174,6 +174,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NavBarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +212,9 @@
     <Content Include="Content\resources\icons\comments.png" />
     <Content Include="Content\resources\icons\gallery.png" />
     <Content Include="Content\resources\icons\home.png" />
+    <Content Include="Content\resources\icons\login.png" />
+    <Content Include="Content\resources\icons\logout.png" />
+    <Content Include="Content\resources\icons\register.png" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -269,6 +273,8 @@
       <DependentUpon>CommentsDBModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="Views\NavBar\login.cshtml" />
+    <Content Include="Views\NavBar\loggedin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

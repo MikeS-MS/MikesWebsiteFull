@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Configuration;
 using System.Data.SqlClient;
+using Microsoft.AspNet.Identity;
 using MikeWebsite.Models;
 
 namespace MikeWebsite.Controllers
@@ -38,8 +39,8 @@ namespace MikeWebsite.Controllers
             if (comment.Message != null && (comment.Message.Length > 0 && comment.Message.Length < 501))
             {
                 var comments = new CommentsDBModel();
-                string command = "INSERT INTO Comment (Message, AuthorUserName) VALUES('{0}', '{1}')";
-                command = string.Format(command, comment.Message, User.Identity.Name);
+                string command = "INSERT INTO Comment (Message, AuthorUserName, AuthorID) VALUES('{0}', '{1}', '{2}')";
+                command = string.Format(command, comment.Message, User.Identity.Name, User.Identity.GetUserId());
                 await comments.Database.ExecuteSqlCommandAsync(command);
                 await comments.SaveChangesAsync();
                 return RedirectToAction("index", "comments");

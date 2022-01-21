@@ -1,0 +1,16 @@
+﻿@using MikeWebsite.Models
+@model LoginViewModel
+
+@*<div class="divider"></div>
+<a>
+    <div id="username" class="menu-text">@@@Model.AccountName</div>
+</a>*@
+<div class="divider"></div>
+<a href="#" onclick="this.children[0].submit()">
+    @using (Html.BeginForm("logout", "account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <img src="~/Content/resources/icons/logout.png" alt="logout icon">
+        <div class="menu-text">Logoff</div>
+    }
+</a>

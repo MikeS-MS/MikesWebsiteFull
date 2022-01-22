@@ -21,5 +21,6 @@ namespace MikeWebsite.Models
         [Display(Name = "Message")]
         public string Message { get; set; }
         public string AuthorUserName { get; set; }
+        public string AuthorId { get; set; }
     }
 }

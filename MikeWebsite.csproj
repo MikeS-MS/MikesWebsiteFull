@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -179,24 +180,27 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs">
-      <DependentUpon>CommentsDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CommentsDBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommentsDBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CommentsDBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommentsDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CommentsDBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommentsDBModel.edmx</DependentUpon>
+      <DependentUpon>SiteDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>SiteDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SiteDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SiteDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SiteDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteDBModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -207,6 +211,7 @@
     </Content>
     <Content Include="Content\comments.css" />
     <Content Include="Content\post.css" />
+    <Content Include="Content\resources\icons\admin.png" />
     <Content Include="Content\resources\icons\comments.png" />
     <Content Include="Content\resources\icons\gallery.png" />
     <Content Include="Content\resources\icons\home.png" />
@@ -217,15 +222,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\CommentsDBModel.Context.tt">
+    <Content Include="Models\SiteDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CommentsDBModel.edmx</DependentUpon>
-      <LastGenOutput>CommentsDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>SiteDBModel.edmx</DependentUpon>
+      <LastGenOutput>SiteDBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CommentsDBModel.tt">
+    <Content Include="Models\SiteDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CommentsDBModel.edmx</DependentUpon>
-      <LastGenOutput>CommentsDBModel.cs</LastGenOutput>
+      <DependentUpon>SiteDBModel.edmx</DependentUpon>
+      <LastGenOutput>SiteDBModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\functionality.js" />
     <Content Include="Scripts\indexSetup.js" />
@@ -257,16 +262,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <EntityDeploy Include="Models\CommentsDBModel.edmx">
+    <EntityDeploy Include="Models\SiteDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CommentsDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SiteDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CommentsDBModel.edmx.diagram">
-      <DependentUpon>CommentsDBModel.edmx</DependentUpon>
+    <Content Include="Models\SiteDBModel.edmx.diagram">
+      <DependentUpon>SiteDBModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\navbar\login.cshtml" />
     <Content Include="Views\navbar\loggedin.cshtml" />
+    <Content Include="Views\admin\index.cshtml" />
+    <Content Include="Views\navbar\admin.cshtml" />
+    <Content Include="Views\navbar\empty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

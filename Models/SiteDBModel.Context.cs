@@ -13,10 +13,10 @@ namespace MikeWebsite.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CommentsDBModel : DbContext
+    public partial class Entities : DbContext
     {
-        public CommentsDBModel()
-            : base("name=Comments")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -26,5 +26,6 @@ namespace MikeWebsite.Models
         }
     
         public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
     }
 }

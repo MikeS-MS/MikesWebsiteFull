@@ -27,7 +27,7 @@ namespace MikeWebsite.Controllers
 
         public PartialViewResult CommentsBox()
         {
-            var comments = new CommentsDBModel();
+            var comments = new Entities();
             return PartialView(comments.Comments.ToList());
         }
 
@@ -38,7 +38,7 @@ namespace MikeWebsite.Controllers
         {
             if (comment.Message != null && (comment.Message.Length > 0 && comment.Message.Length < 501))
             {
-                var comments = new CommentsDBModel();
+                var comments = new Entities();
                 string command = "INSERT INTO Comment (Message, AuthorUserName, AuthorID) VALUES('{0}', '{1}', '{2}')";
                 command = string.Format(command, comment.Message, User.Identity.Name, User.Identity.GetUserId());
                 await comments.Database.ExecuteSqlCommandAsync(command);

@@ -116,6 +116,11 @@ namespace MikeWebsite.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    Entities context = new Entities();
+                    string command = "INSERT INTO Roles VALUES('{0}', 0)";
+                    command = string.Format(command, user.Id);
+                    context.Database.ExecuteSqlCommand(command);
+                    context.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     return RedirectToAction("index", "home");

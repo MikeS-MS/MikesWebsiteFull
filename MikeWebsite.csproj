@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\DownloadsController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavBarController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Models\Comment.cs">
       <DependentUpon>SiteDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DownloadViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Role.cs">
       <DependentUpon>SiteDBModel.tt</DependentUpon>
@@ -210,13 +212,23 @@
       <DependentUpon>aspnet-MikeWebsite-20220119014525.mdf</DependentUpon>
     </Content>
     <Content Include="Content\comments.css" />
+    <Content Include="Content\downloads\admin.png" />
+    <Content Include="Content\downloads\comments.png" />
+    <Content Include="Content\downloads\gallery.png" />
+    <Content Include="Content\downloads\home.png" />
+    <Content Include="Content\downloads\login.png" />
+    <Content Include="Content\downloads\logout.png" />
+    <Content Include="Content\downloads\owncomments.png" />
+    <Content Include="Content\downloads\register.png" />
     <Content Include="Content\post.css" />
     <Content Include="Content\resources\icons\admin.png" />
     <Content Include="Content\resources\icons\comments.png" />
+    <Content Include="Content\resources\icons\downloads.png" />
     <Content Include="Content\resources\icons\gallery.png" />
     <Content Include="Content\resources\icons\home.png" />
     <Content Include="Content\resources\icons\login.png" />
     <Content Include="Content\resources\icons\logout.png" />
+    <Content Include="Content\resources\icons\owncomments.png" />
     <Content Include="Content\resources\icons\register.png" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -275,6 +287,8 @@
     <Content Include="Views\admin\index.cshtml" />
     <Content Include="Views\navbar\admin.cshtml" />
     <Content Include="Views\navbar\empty.cshtml" />
+    <Content Include="Views\account\mycomments.cshtml" />
+    <Content Include="Views\downloads\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

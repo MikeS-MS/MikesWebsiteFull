@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MikeWebsite.Models;
+using System.Collections.Generic;
 
 namespace MikeWebsite.Controllers
 {
@@ -140,6 +141,48 @@ namespace MikeWebsite.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("index", "home");
+        }
+
+        public ActionResult MyComments()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var context = new Entities();
+                var all_comments = context.Comments.ToList();
+                var own_comments = new List<Comment>();
+                string user_id = User.Identity.GetUserId();
+
+                foreach (var comment in all_comments)
+                {
+                    if (comment.AuthorId == user_id)
+                    {
+                        own_comments.Add(comment);
+                    }
+                }
+
+                return View(own_comments);
+            }
+            return RedirectToAction("index", "home");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> MyComments(Comment comment)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string user_id = User.Identity.GetUserId();
+                var context = new Entities();
+
+                if (comment.AuthorId == user_id)
+                {
+                    string command = "DELETE FROM Comment WHERE Id={0}";
+                    command = string.Format(command, comment.Id);
+                    await context.Database.ExecuteSqlCommandAsync(command);
+                    await context.SaveChangesAsync();
+                }
+            }
+            return RedirectToAction("mycomments", "account");
         }
 
         protected override void Dispose(bool disposing)

@@ -2,13 +2,18 @@ body {
     background-color: rgb(235, 235, 235);
 }
 
-
 /* ----- Start of scrollable main content/grid  ----- */
+
+.delete-button {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 .text-danger {
     color: palevioletred;
     background-color: rgba(0,0,0,0);
-/*    left: 25%;
-    width: 50%;*/
 }
 
 .image-scroll {
@@ -468,7 +473,7 @@ body {
     }
     .menu-text {
         visibility: visible;
-        font-size: 28px;
+        font-size: 20px;
     }
     .menu-overview a img,
     .menu-text {

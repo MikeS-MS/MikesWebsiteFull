@@ -11,7 +11,7 @@
         var element = document.createElement('div')
         element.classList.add('picture-frame')
         element.innerHTML = `
-        <a class="thumbnail" href="https://picsum.photos/1920/1080?random=${i}" download="RandomImage">
+        <a class="thumbnail">
             <img src="https://picsum.photos/1920/1080?random=${i}" alt="thumbnail">
         </a>
         <!-- Share buttons overlay -->

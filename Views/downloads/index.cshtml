@@ -1,0 +1,26 @@
+﻿@using MikeWebsite.Models
+@model List<DownloadViewModel>
+
+@{
+    ViewBag.Title = "Downloads";
+}
+
+@section Styles 
+{
+    @Styles.Render("~/Content/post.css")
+} 
+
+<div class="post-frame">
+    <h1 class="post-text">Downloads</h1>
+    <div class="post-divider"></div>
+    <ul>
+        @foreach (var download in Model)
+        {
+            <li>
+                <a href="@download.href" class="post-text" download="@download.filedownloadname">
+                    Download @download.filename
+                </a>
+            </li>
+        }
+    </ul>
+</div>

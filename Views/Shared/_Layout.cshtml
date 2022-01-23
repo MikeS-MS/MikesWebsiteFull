@@ -37,17 +37,22 @@
     <!-- Menu tabs -->
     <div id="menu-overview" class="menu-overview">
         <a href="/home/">
-            <img id="home" src="~/Content/resources/icons/home.png" alt="home icon">
+            <img src="~/Content/resources/icons/home.png" alt="home icon">
             <div class="menu-text">Home</div>
         </a>
         <div class="divider"></div>
         <a href="/gallery/">
-            <img id="gallery" src="~/Content/resources/icons/gallery.png" alt="home icon">
+            <img src="~/Content/resources/icons/gallery.png" alt="home icon">
             <div class="menu-text">Gallery</div>
         </a>
         <div class="divider"></div>
+        <a href="/downloads/">
+            <img src="~/Content/resources/icons/downloads.png" alt="downloads icon">
+            <div class="menu-text">Downloads</div>
+        </a>
+        <div class="divider"></div>
         <a href="/comments/">
-            <img id="comments" src="~/Content/resources/icons/comments.png" alt="comments icon">
+            <img src="~/Content/resources/icons/comments.png" alt="comments icon">
             <div class="menu-text">Comments</div>
         </a>
         @Html.Action("admin", "NavBar");
@@ -56,7 +61,6 @@
         <a class="dark-mode-button-outline" onclick="DarkMode()">
             <span class="dark-mode-button-circle"></span>
         </a>
-        <div id="dark-mode-text" class="menu-text">Dark Mode</div>
         <div class="divider"></div>
     </div>
 

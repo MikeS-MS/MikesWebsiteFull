@@ -8,7 +8,7 @@
 @foreach (var Comment in Model)
 {
     <div class="comment-container">
-        <div class="post-text comment-text">@Comment.AuthorUserName</div>
+        <div class="post-text comment-text">@Comment.AuthorUserName - @Comment.DateAdded</div>
         <div class="post-divider comment-divider"></div>
         <div class="post-text comment-text comment-content" style="text-transform: none !important;">@Comment.Message</div>
     </div>

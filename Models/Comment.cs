@@ -6,7 +6,6 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System.ComponentModel.DataAnnotations;
 
 namespace MikeWebsite.Models
 {
@@ -16,11 +15,9 @@ namespace MikeWebsite.Models
     public partial class Comment
     {
         public int Id { get; set; }
-        [Required]
-        [StringLength(500, ErrorMessage = "The {0} must be at between {2} and {1} characters.", MinimumLength = 1)]
-        [Display(Name = "Message")]
         public string Message { get; set; }
         public string AuthorUserName { get; set; }
         public string AuthorId { get; set; }
+        public string DateAdded { get; set; }
     }
 }

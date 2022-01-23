@@ -24,7 +24,7 @@
                 @Html.AntiForgeryToken()
                 @Html.TextBoxFor(m => comment.Id, new { @style = "visibility: hidden; position: fixed; z-index: -9999;", value = comment.Id })
                 @Html.TextBoxFor(m => comment.AuthorId, new { @style = "visibility: hidden; position: fixed; z-index: -9999;", value = comment.AuthorId })
-                <div class="post-text comment-text">@comment.AuthorUserName</div>
+                <div class="post-text comment-text">@comment.AuthorUserName - @comment.DateAdded</div>
                 <div class="post-divider comment-divider"></div>
                 <div class="post-text comment-text comment-content" style="text-transform: none !important;">
                     @comment.Message

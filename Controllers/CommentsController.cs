@@ -39,8 +39,10 @@ namespace MikeWebsite.Controllers
             if (comment.Message != null && (comment.Message.Length > 0 && comment.Message.Length < 501))
             {
                 var comments = new Entities();
-                string command = "INSERT INTO Comment (Message, AuthorUserName, AuthorID) VALUES('{0}', '{1}', '{2}')";
-                command = string.Format(command, comment.Message, User.Identity.Name, User.Identity.GetUserId());
+                string command = "INSERT INTO Comment (Message, AuthorUserName, AuthorID, DateAdded) VALUES('{0}', '{1}', '{2}', '{3}')";
+                string time = "{0}.{1}.{2} - {3}:{4}";
+                time = string.Format(time, DateTime.Now.Day.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString(), DateTime.Now.Hour.ToString(), DateTime.Now.Minute.ToString("00"));
+                command = string.Format(command, comment.Message, User.Identity.Name, User.Identity.GetUserId(), time);
                 await comments.Database.ExecuteSqlCommandAsync(command);
                 await comments.SaveChangesAsync();
                 return RedirectToAction("index", "comments");
